@@ -4,12 +4,15 @@
                    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    <changeSet id="2022-05-20-wardrobe-data" author="marieborisova">
-        <loadData tableName="wardrobe"
-                  file="db.changelog/data/csv/2022-05-20-wardrobe-data.csv"
-                  separator=";"
-                  quotchar='"'
-                  encoding="UTF-8"></loadData>
-    </changeSet>
+    <include file="db.changelog/1.0/2022-05-20-season.xml"/>
+    <include file="db.changelog/1.0/2022-05-20-size.xml"/>
+    <include file="db.changelog/1.0/2022-05-20-wardrobe.xml"/>
+
+
+
+    <include file="db.changelog/data/2022-05-20-season-data.xml"/>
+    <include file="db.changelog/data/2022-05-20-size-data.xml"/>
+    <include file="db.changelog/data/2022-05-20-wardrobe-data.xml"/>
+
 
 </databaseChangeLog>

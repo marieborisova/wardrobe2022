@@ -29,14 +29,14 @@ public class WardrobeDemoService {
             System.out.println(season);
         }
         System.out.println("+++++++++++");
-
-        seasonService.update(1, "СуперЗима");
-        seasonList = seasonService.getAll();
-        System.out.println("+++++++++++");
-        for (Season season1:seasonList){
-            System.out.println(season1);
-        }
-        System.out.println("+++++++++++");
+//
+//        seasonService.update(1, "СуперЗима");
+//        seasonList = seasonService.getAll();
+//        System.out.println("+++++++++++");
+//        for (Season season1:seasonList){
+//            System.out.println(season1);
+//        }
+//        System.out.println("+++++++++++");
 
 
 
@@ -48,23 +48,23 @@ public class WardrobeDemoService {
         for (Wardrobe wardrobe : wardrobeList) {
             System.out.println(wardrobe.getName() + ":");
             System.out.println(wardrobe.getSeason().getName() + "," + wardrobe.getSize().getName());
-            List<Comment> commentList = wardrobe.getCommentList();
-            for (Comment comment : commentList) {
-                System.out.println(comment.getContent());
-            }
+//            List<Comment> commentList = wardrobe.getCommentList();
+//            for (Comment comment : commentList) {
+//                System.out.println(comment.getContent());
+   //         }
         }
-        wardrobeService.insert("платье", "лето",
-                "m");
+        wardrobeService.insert("платье", "Лето",
+                "M");
         wardrobeList = wardrobeService.getAll();
         for (Wardrobe wardrobe : wardrobeList) {
             System.out.println(wardrobe.getName() + ":");
             System.out.println(wardrobe.getSeason().getName() + "," + wardrobe.getSize().getName());
-            List<Comment> commentList = wardrobe.getCommentList();
-            if (commentList != null) {
-                for (Comment comment : commentList) {
-                    System.out.println(comment.getContent());
-                }
-            }
+//            List<Comment> commentList = wardrobe.getCommentList();
+//            if (commentList != null) {
+//                for (Comment comment : commentList) {
+//                    System.out.println(comment.getContent());
+//                }
+//            }
         }
     }
     @Transactional
@@ -76,7 +76,7 @@ public class WardrobeDemoService {
             //System.out.println(comment.getBook().getName() + ":");
             System.out.println(comment.getId() + " - " + comment.getContent());
         }
-        commentList = commentRepository.findByBookId(2);
+        commentList = commentRepository.findByWardrobeId(2);
         for(Comment comment : commentList){
             //System.out.println(comment.getBook().getName() + ":");
             System.out.println(comment.getId() + " - " + comment.getContent());

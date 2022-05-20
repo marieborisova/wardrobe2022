@@ -22,8 +22,8 @@ public class CommentServiceImpl implements CommentService{
     }
 
     @Override
-    public List<Comment> getByBookId(int bookId) {
-        return commentRepository.findByBookId(bookId);
+    public List<Comment> getByWardrobeId(int wardrobeId) {
+        return commentRepository.findByWardrobeId(wardrobeId);
     }
 
     @Override

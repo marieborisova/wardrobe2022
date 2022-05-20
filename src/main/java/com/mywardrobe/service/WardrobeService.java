@@ -13,9 +13,9 @@ public interface WardrobeService {
 
     Wardrobe update(
             int id,
-            String nameBook,
-            String nameAuthor,
-            String nameGenre
+            String nameWardrobe,
+            String nameSeason,
+            String nameSize
     );
 
     List<Wardrobe> getAll();

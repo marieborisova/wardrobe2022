@@ -14,5 +14,5 @@ public interface CommentRepository extends JpaRepository<Comment, Integer> {
     @Query("update Comment c set c.content = :content where c.id = :id")
     void updateCommentById(@Param("id") int id,
                            @Param("content") String content);
-    List<Comment> findByBookId(int id);
+    List<Comment> findByWardrobeId(int id);
 }

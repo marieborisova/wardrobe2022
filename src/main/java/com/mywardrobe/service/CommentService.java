@@ -7,7 +7,7 @@ import java.util.List;
 public interface CommentService {
     Comment insert(Comment comment);
     List<Comment> getAll();
-    List<Comment> getByBookId(int bookId);
+    List<Comment> getByWardrobeId(int wardrobeId);
     void deleteById(int id);
     Comment update(int id, String content);
 
