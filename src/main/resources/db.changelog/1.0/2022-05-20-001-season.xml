@@ -4,14 +4,15 @@
                    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    <changeSet id="2022-05-20-comment" author="marieborisova">
+    <changeSet id="2022-05-20-001-season" author="marieborisova">
 
         <preConditions>
             <not>
-                <tableExists tableName="comment"/>
+                <tableExists tableName="season"/>
             </not>
         </preConditions>
-        <createTable tableName="comment">
+        <createTable tableName="season">
+
             <column name="id"
                     type="NUMERIC(19,0)"
                     autoIncrement="true">
@@ -20,16 +21,9 @@
 
 
             </column>
-            <column name="content"
-                    type="VARCHAR(250)">
+            <column name="name"
+                    type="VARCHAR(100)">
                 <constraints nullable="false"/>
-            </column>
-            <column name="book_id"
-                    type="NUMERIC(19,0)">
-                <constraints nullable="false"
-                             foreignKeyName="fk_comment_wardrobe"
-                             references="wardrobe(id)"
-                             deleteCascade="true"/>
             </column>
         </createTable>
     </changeSet>

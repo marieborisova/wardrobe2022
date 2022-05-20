@@ -4,9 +4,9 @@
                    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    <changeSet id="2022-05-20-wardrobe-data" author="marieborisova">
+    <changeSet id="2022-05-20-004-wardrobe-data" author="marieborisova">
         <loadData tableName="wardrobe"
-                  file="db.changelog/data/csv/2022-05-20-wardrobe-data.csv"
+                  file="db.changelog/data/csv/2022-05-20-004-wardrobe-data.csv"
                   separator=";"
                   quotchar='"'
                   encoding="UTF-8"></loadData>

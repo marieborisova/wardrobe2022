@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface WardrobeRepository  extends JpaRepository<Wardrobe, Integer> {
     @Override
-    @EntityGraph(attributePaths = {"season", "size", "commentList"} )
+    @EntityGraph(attributePaths = {"season", "size"} )
     List<Wardrobe> findAll();
 
     List<Wardrobe> findByName(String name);

@@ -27,6 +27,5 @@ public class Wardrobe {
     @JoinColumn(name = "size_id")
     private Size size;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "wardrobe")
-    private List<Comment> commentList;
+
 }

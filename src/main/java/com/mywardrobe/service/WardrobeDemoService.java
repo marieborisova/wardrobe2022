@@ -1,10 +1,10 @@
 package com.mywardrobe.service;
 
-import com.mywardrobe.domain.Comment;
+
 import com.mywardrobe.domain.Season;
 import com.mywardrobe.domain.Size;
 import com.mywardrobe.domain.Wardrobe;
-import com.mywardrobe.repository.CommentRepository;
+
 import com.mywardrobe.repository.WardrobeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class WardrobeDemoService {
     private final SeasonService seasonService;
     private final SizeService sizeService;
 
-    private final CommentRepository commentRepository;
+
 
     private final WardrobeService wardrobeService;
 
@@ -67,21 +67,6 @@ public class WardrobeDemoService {
 //            }
         }
     }
-    @Transactional
-    public void commentDemo(){
-        commentRepository.updateCommentById(1, "ОЧЕНЬ");
 
-        List<Comment> commentList =  commentRepository.findAll();
-        for(Comment comment : commentList){
-            //System.out.println(comment.getBook().getName() + ":");
-            System.out.println(comment.getId() + " - " + comment.getContent());
-        }
-        commentList = commentRepository.findByWardrobeId(2);
-        for(Comment comment : commentList){
-            //System.out.println(comment.getBook().getName() + ":");
-            System.out.println(comment.getId() + " - " + comment.getContent());
-        }
-
-    }
 
 }

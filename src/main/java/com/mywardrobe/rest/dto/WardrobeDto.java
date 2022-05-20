@@ -21,25 +21,15 @@ public class WardrobeDto {
     private String name;
     private SeasonDto seasonDto;
     private SizeDto sizeDto;
-    private List<CommentDto> commentDtoList;
+
 
     public static WardrobeDto toDto(Wardrobe wardrobe){
-        List<CommentDto> commentDtoList1 = new ArrayList<>();
-        if(wardrobe.getCommentList() != null){
-            commentDtoList1 = wardrobe.getCommentList()
-                    .stream()
-                    .map(CommentDto::toDto)
-                    .collect(Collectors.toList());
-        }
-        else{
-            commentDtoList1 = new ArrayList<>();
-        }
+
         return new WardrobeDto(
                 wardrobe.getId(),
                 wardrobe.getName(),
                 SeasonDto.toDto(wardrobe.getSeason()),
-                SizeDto.toDto(wardrobe.getSize()),
-                commentDtoList1
+                SizeDto.toDto(wardrobe.getSize())
 
         );
     }
