@@ -14,7 +14,7 @@ public class App {
         ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
 
 
-       context.getBean(ClothingDemoService.class).clothingDemo();
+       //context.getBean(ClothingDemoService.class).clothingDemo();
 
        //context.close();
       try {
