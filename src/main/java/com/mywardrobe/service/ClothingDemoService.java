@@ -2,10 +2,9 @@ package com.mywardrobe.service;
 
 
 import com.mywardrobe.domain.Season;
-import com.mywardrobe.domain.Size;
-import com.mywardrobe.domain.Wardrobe;
+import com.mywardrobe.domain.Clothing;
 
-import com.mywardrobe.repository.WardrobeRepository;
+import com.mywardrobe.repository.ClothingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,15 +12,15 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
-public class WardrobeDemoService {
+public class ClothingDemoService {
     private final SeasonService seasonService;
     private final SizeService sizeService;
 
 
 
-    private final WardrobeService wardrobeService;
+    private final ClothingService clothingService;
 
-    private final WardrobeRepository wardrobeRepository;
+    private final ClothingRepository clothingRepository;
     public void seasonDemo(){
         List<Season> seasonList = seasonService.getAll();
         System.out.println("+++++++++++");
@@ -42,23 +41,23 @@ public class WardrobeDemoService {
 
     }
     @Transactional
-    public void wardrobeDemo() {
-        List<Wardrobe> wardrobeList = wardrobeService.getAll();
+    public void clothingDemo() {
+        List<Clothing> clothingList = clothingService.getAll();
 
-        for (Wardrobe wardrobe : wardrobeList) {
-            System.out.println(wardrobe.getName() + ":");
-            System.out.println(wardrobe.getSeason().getName() + "," + wardrobe.getSize().getName());
+        for (Clothing clothing : clothingList) {
+            System.out.println(clothing.getName() + ":");
+            System.out.println(clothing.getSeason().getName() + "," + clothing.getSize().getName()+ "," + clothing.getSex().getName());
 //            List<Comment> commentList = wardrobe.getCommentList();
 //            for (Comment comment : commentList) {
 //                System.out.println(comment.getContent());
    //         }
         }
-        wardrobeService.insert("платье", "Лето",
-                "M");
-        wardrobeList = wardrobeService.getAll();
-        for (Wardrobe wardrobe : wardrobeList) {
-            System.out.println(wardrobe.getName() + ":");
-            System.out.println(wardrobe.getSeason().getName() + "," + wardrobe.getSize().getName());
+        clothingService.insert("платье", "Лето",
+                "M", "F");
+        clothingList = clothingService.getAll();
+        for (Clothing clothing : clothingList) {
+            System.out.println(clothing.getName() + ":");
+            System.out.println(clothing.getSeason().getName() + "," + clothing.getSize().getName()+ "," + clothing.getSex().getName());
 //            List<Comment> commentList = wardrobe.getCommentList();
 //            if (commentList != null) {
 //                for (Comment comment : commentList) {

@@ -4,13 +4,13 @@
                    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
-    <changeSet id="2022-05-20-004-wardrobe" author="marieborisova">
+    <changeSet id="2022-05-20-004-clothing" author="marieborisova">
         <preConditions>
             <not>
-                <tableExists tableName="wardrobe"/>
+                <tableExists tableName="clothing"/>
             </not>
         </preConditions>
-        <createTable tableName="wardrobe">
+        <createTable tableName="clothing">
             <column name="id"
                     type="NUMERIC(19,0)"
                     autoIncrement="true">
@@ -26,15 +26,22 @@
             <column name="season_id"
                     type="NUMERIC(19,0)">
                 <constraints nullable="false"
-                             foreignKeyName="fk_wardrobe_season"
+                             foreignKeyName="fk_clothing_season"
                              references="season(id)"
                              deleteCascade="true"/>
             </column>
             <column name="size_id"
                     type="NUMERIC(19,0)">
                 <constraints nullable="false"
-                             foreignKeyName="fk_wardrobe_size"
+                             foreignKeyName="fk_clothing_size"
                              references="size(id)"
+                             deleteCascade="true"/>
+            </column>
+            <column name="sex_id"
+                    type="NUMERIC(19,0)">
+                <constraints nullable="false"
+                             foreignKeyName="fk_clothing_sex"
+                             references="sex(id)"
                              deleteCascade="true"/>
             </column>
         </createTable>

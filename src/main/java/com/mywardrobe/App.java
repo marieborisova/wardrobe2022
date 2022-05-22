@@ -1,7 +1,6 @@
 package com.mywardrobe;
 
-import com.mywardrobe.domain.Wardrobe;
-import com.mywardrobe.service.WardrobeDemoService;
+import com.mywardrobe.service.ClothingDemoService;
 import org.h2.tools.Console;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -15,7 +14,7 @@ public class App {
         ConfigurableApplicationContext context = SpringApplication.run(App.class, args);
 
 
-       context.getBean(WardrobeDemoService.class).wardrobeDemo();
+       context.getBean(ClothingDemoService.class).clothingDemo();
 
        //context.close();
       try {

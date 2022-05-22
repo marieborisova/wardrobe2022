@@ -16,10 +16,10 @@ public class SeasonServiceImpl implements SeasonService {
 
 
     @Override
-    public Season insert(Season author) {
+    public Season insert(Season season) {
 
 
-        return seasonRepository.save(author);
+        return seasonRepository.save(season);
     }
 
     @Override
@@ -41,10 +41,10 @@ public class SeasonServiceImpl implements SeasonService {
     @Override
     public Season update(int id, String name) {
 
-        Season author = Season.builder()
+        Season season = Season.builder()
                 .id(id)
                 .name(name).build();
-        return seasonRepository.save(author);
+        return seasonRepository.save(season);
     }
 
     @Override

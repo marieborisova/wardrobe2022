@@ -38,8 +38,8 @@ public class SizeServiceImpl implements SizeService{
     @Override
     public Size update(int id, String name) {
 
-        Size genre = Size.builder().id(id).name(name).build();
-        return sizeRepository.save(genre);
+        Size size = Size.builder().id(id).name(name).build();
+        return sizeRepository.save(size);
     }
 
     @Override

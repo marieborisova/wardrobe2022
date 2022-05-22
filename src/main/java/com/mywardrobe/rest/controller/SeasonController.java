@@ -22,7 +22,7 @@ public class SeasonController {
     }
 
     @PostMapping("/season")
-    public SeasonDto insertAuthor(@RequestBody SeasonDto seasonDto){
+    public SeasonDto insertSeason(@RequestBody SeasonDto seasonDto){
         Season season = seasonService.insert(SeasonDto.toDomainObject(seasonDto));
         return SeasonDto.toDto(season);
 

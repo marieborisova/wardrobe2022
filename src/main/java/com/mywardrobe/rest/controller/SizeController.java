@@ -34,7 +34,7 @@ public class SizeController {
     }
 
     @GetMapping("/size/{id}")
-    public SizeDto getGenreById(@PathVariable int id) {
+    public SizeDto getGenreSizeById(@PathVariable int id) {
 
         return SizeDto.toDto(sizeService.getById(id));
     }
